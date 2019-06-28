@@ -1,0 +1,16 @@
+/Users/mspiering/Projects/TestMVC/TestMVC/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/TestMVC.pdb
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/TestMVC.dll
+/Users/mspiering/Projects/TestMVC/TestMVC/obj/Debug/TestMVC.dll
+/Users/mspiering/Projects/TestMVC/TestMVC/obj/Debug/TestMVC.pdb
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/System.Web.Razor.dll
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/Microsoft.Web.Infrastructure.dll
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/System.Web.Helpers.dll
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/System.Web.WebPages.Deployment.dll
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/System.Web.WebPages.dll
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/System.Web.WebPages.Razor.dll
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/System.Web.Mvc.dll
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/System.Net.Http.Formatting.dll
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/System.Web.Http.dll
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/System.Web.Http.WebHost.dll
+/Users/mspiering/Projects/TestMVC/TestMVC/bin/Newtonsoft.Json.dll

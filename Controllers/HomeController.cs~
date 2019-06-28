@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Mvc.Ajax;
+
+namespace TestMVC.Controllers
+{
+	public class HomeController : Controller
+	{
+		public ActionResult Index()
+		{
+			var mvcName = typeof(Controller).Assembly.GetName();
+			var isMono = Type.GetType("Mono.Runtime") != null;
+
+			ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
+			ViewData["Runtime"] = isMono ? "Mono" : ".NET";
+
+			X509Certificate2 certificate = new X509Certificate2(@"c:\etc\cf-system-certificates\container-trusted-ca-3.crt");
+
+			string expirationDate = certificate.GetExpirationDateString();
+			string issuer = certificate.Issuer;
+			string effectiveDateString = certificate.GetEffectiveDateString();
+			string nameInfo = certificate.GetNameInfo(X509NameType.SimpleName, true);
+			bool hasPrivateKey = certificate.HasPrivateKey;
+
+			Console.Out.WriteLine(expirationDate);
+			Console.Out.WriteLine(issuer);
+			Console.Out.WriteLine(effectiveDateString);
+			Console.Out.WriteLine(nameInfo);
+			X509Store computerCaStore = new X509Store(StoreName.Root, StoreLocation.LocalMachine);
+			X509Certificate2 rootCert = new X509Certificate2(@"c:\etc\cf-system-certificates\container-trusted-ca-3.crt");
+			try
+			{
+				computerCaStore.Open(OpenFlags.ReadWrite);
+				computerCaStore.Add(rootCert);
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("Root certificate import failed: " + ex.Message);
+			}
+			finally
+			{
+				computerCaStore.Close();
+			}
+
+			return View();
+		}
+	}
+}
