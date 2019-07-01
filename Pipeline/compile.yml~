@@ -1,0 +1,6 @@
+platform: windows    
+inputs:
+  - name: code
+run:
+  dir: code
+  path: C:\tools\git\bin\git.exe

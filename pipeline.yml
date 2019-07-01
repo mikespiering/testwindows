@@ -1,0 +1,26 @@
+resources:
+  - name: code
+    type: git
+    source:
+      uri: https://github.com/mikespiering/DatDotNet.git
+      branch: master
+  - name: resource-deploy-web-app
+    type: cf
+    source:
+      api: https://api.sys.pcftestlab.net
+      username: {{cf-username}}
+      password: {{cf-password}}
+      organization: sandbox
+      space: dev
+jobs:
+  - name: build
+    plan:
+    - aggregate:
+      - get: code
+        trigger: true
+    - task: compile
+      privileged: true
+      file: code/Pipeline/compile.yml
+    - put: resource-deploy-web-app
+      params:
+         manifest: code/manifest.yml

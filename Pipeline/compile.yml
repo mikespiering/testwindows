@@ -1,0 +1,6 @@
+platform: windows    
+inputs:
+  - name: code
+run:
+  dir: code
+  path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe

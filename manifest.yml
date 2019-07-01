@@ -1,0 +1,6 @@
+---
+applications:
+- name: testwinci
+  memory: 1G
+  stack: windows
+  buildpack: hwc_buildpack
